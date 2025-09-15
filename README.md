@@ -89,7 +89,30 @@ HLT
 
 ### Program:
 
+```
+LDA 4200H
+MOV C,A
+LDA 4201H
+MOV B, A
+MVI A, 00H
+LOOP: MOV A, C
+CMP B
+JC END
+SUB B
+MOV C, A
+INR D
+JMP LOOP
+END: MOV A, D
+STA 4300H
+MOV A, C
+STA 4301H
+HLT
+```
+
 ### Output:
+<img width="1880" height="873" alt="image" src="https://github.com/user-attachments/assets/e2458ebb-f19e-4632-ab1f-e5cb05b0400c" />
+<img width="1881" height="858" alt="image" src="https://github.com/user-attachments/assets/42697b7b-f22b-4a7a-8566-cabcf5860f6a" />
+
 
 ## Result:
 The 8-bit arithmetic operations using the 8085 microprocessor have been successfully executed and verified using memory access for input and output.
